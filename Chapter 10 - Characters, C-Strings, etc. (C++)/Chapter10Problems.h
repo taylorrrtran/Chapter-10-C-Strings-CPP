@@ -9,4 +9,7 @@ class chapter10Problems {
 		static int wordCounter(char *input);
 		static void AVG_NUM_LETTERS(char *input);
 		static void sentenceCapitalizer(char *input);
+		static void nameArranger();
+		static void sumDigitsInString();
+		static int mostFrequentChar(char *input);
 };
