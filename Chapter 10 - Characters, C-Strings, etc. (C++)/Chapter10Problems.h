@@ -12,4 +12,12 @@ class chapter10Problems {
 		static void nameArranger();
 		static void sumDigitsInString();
 		static int mostFrequentChar(char *input);
+		static void replaceSubstring();
+
+		static void caseManipulator();
+		static void upper(char *input);
+		static void lower(char *input);
+		static void reverse(char *input);
+
+		static void passwordVerifier();
 };

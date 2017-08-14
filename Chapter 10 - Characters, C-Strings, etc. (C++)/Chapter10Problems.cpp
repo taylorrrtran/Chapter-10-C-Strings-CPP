@@ -8,7 +8,7 @@
 
 int main() {
 	chapter10Problems *p1 = new chapter10Problems;
-	p1->sumDigitsInString();
+	p1->caseManipulator();
 	system("pause");
 	return 0;
 }
@@ -368,6 +368,151 @@ void chapter10Problems::sumDigitsInString()
 	//Display the highest and lowest number of the string
 
 }
+
+void chapter10Problems::replaceSubstring()
+{
+	//This program will do 
+}
+
+void chapter10Problems::passwordVerifier()
+{
+	//This program will prompt a user to create a password with requirements
+
+	const int size = 19;
+	char password[size];
+
+	std::cout << "Password Verifier\n\n";
+	std::cout << "Password should be at least six characters long. Max characters is 19.\n";
+	std::cout << "Password should contain at least one uppercase and at least one lowercase letter.\n";
+	std::cout << "Password should have at least one digit.\n";	
+
+	//Check for requirements
+	int totalUppercase = 0, totalLowercase = 0, totalDigit = 0;
+	while (totalUppercase < 1 || totalLowercase < 1 || totalDigit < 1)
+	{
+		//Gather password
+		std::cout << "\nEnter a password: ";
+		std::cin.getline(password, size);
+
+		//Input validation: Length of password cannot be less than 6 or greater than 19
+		int length = strlen(password);
+		while (length < 6 || length > 19)
+		{
+			std::cout << "\nPassword cannot be less than 6 characters or be greater than 19 characters. Try again: ";
+			std::cin.getline(password, size);
+			length = strlen(password);
+		}
+
+		totalUppercase = 0, totalLowercase = 0, totalDigit = 0;
+		for (int i = 0; i < length; i++)
+		{
+			//Running total for digits
+			if (isdigit(password[i]))
+				totalDigit += 1;
+			
+			//Running total for uppercase
+			if (isupper(password[i]))
+				totalUppercase += 1;
+
+			//Running total for lowercase
+			if (islower(password[i]))
+				totalLowercase += 1;
+		}
+
+		//Give error messages based on which requirements were not met
+		std::cout << std::endl;
+		if (totalDigit < 1)
+			std::cout << "Password must have at least 1 digit.\n";
+
+		if (totalUppercase < 1)
+			std::cout << "Password must have at least 1 uppercase.\n";
+
+		if (totalLowercase < 1)
+			std::cout << "Password must have at least 1 lowercase.\n";
+	}
+
+	//Congratulate user on getting a valid password
+	std::cout << "Congratulations! You have entered a valid password!\n";
+}
+
+void chapter10Problems::caseManipulator()
+{
+	//This program will use three functions: upper, lower, and reverse
+
+	const int size = 50;
+	char input[size];
+	std::cout << "Enter a word or phrase no less than 0 characters or longer than 50 characters: ";
+	
+	//Gather input
+	std::cin.getline(input, size);
+
+	//Input validation: Input must be no less than 0 or longer than 50 characters
+	int length = strlen(input);
+	while (length < 0 || length > 50)
+	{
+		std::cout << "Word/phrase must be no less than 0 characters or longer than 50 characters. Try again: ";
+		std::cin.getline(input, size);
+		length = strlen(input);
+	}
+
+	//Call the upper, lower, and reverse functions
+	std::cout << std::endl;
+	upper(input);
+	lower(input);
+	reverse(input);
+}
+
+void chapter10Problems::upper(char *input)
+{
+	//This function will make an entire string in uppercase
+
+	//Get length of input
+	int length = strlen(input);
+
+	//Loop and make every character upper if possible. Print each character
+	std::cout << "Fully uppercase: ";
+	for (int i = 0; i <= length; i++)
+		std::cout << toupper(input[i]);
+
+	std::cout << std::endl << std::endl;
+}
+
+void chapter10Problems::lower(char *input)
+{
+	//This function will make an entire string in lowercase
+
+	//Get length of input
+	int length = strlen(input);
+
+	//Loop and make every character lower if possible. Print each character
+	std::cout << "Fully lowercase: ";
+	for (int i = 0; i <= length; i++)
+		std::cout << tolower(input[i]);
+
+	std::cout << std::endl << std::endl;
+}
+
+void chapter10Problems::reverse(char *input)
+{
+	//This function will convert a character to the opposite "case"
+
+	//Get length of input
+	int length = strlen(input);
+
+	//Loop and make every character reversed if possible. Print each character
+	std::cout << "Fully reversed: ";
+	for (int i = 0; i <= length; i++)
+	{
+		if (isupper(input[i]))
+			std::cout << tolower(input[i]);
+		else if (islower(input[i]))
+			std::cout << toupper(input[i]);
+	}
+
+	std::cout << std::endl << std::endl;
+}
+
+
 
 chapter10Problems::chapter10Problems()
 {
