@@ -20,4 +20,5 @@ class chapter10Problems {
 		static void reverse(char *input);
 
 		static void passwordVerifier();
+		static void wordSeparator();
 };

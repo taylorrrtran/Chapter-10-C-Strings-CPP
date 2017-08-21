@@ -9,6 +9,7 @@ e:\visual studio 2017\projects\chapter 10 - characters, c-strings, etc. (c++)\ch
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(93): note: see declaration of 'strcat'
 e:\visual studio 2017\projects\chapter 10 - characters, c-strings, etc. (c++)\chapter10problems.cpp(331): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: see declaration of 'strcpy'
+e:\visual studio 2017\projects\chapter 10 - characters, c-strings, etc. (c++)\chapter10problems.cpp(534): warning C4018: '<': signed/unsigned mismatch
 e:\visual studio 2017\projects\chapter 10 - characters, c-strings, etc. (c++)\chapter10problems.cpp(297): warning C4715: 'chapter10Problems::mostFrequentChar': not all control paths return a value
   Chapter 10 - Characters, C-Strings, etc. (C++).vcxproj -> E:\Visual Studio 2017\Projects\Chapter 10 - Characters, C-Strings, etc. (C++)\Debug\Chapter 10 - Characters, C-Strings, etc. (C++).exe
   Chapter 10 - Characters, C-Strings, etc. (C++).vcxproj -> E:\Visual Studio 2017\Projects\Chapter 10 - Characters, C-Strings, etc. (C++)\Debug\Chapter 10 - Characters, C-Strings, etc. (C++).pdb (Partial PDB)

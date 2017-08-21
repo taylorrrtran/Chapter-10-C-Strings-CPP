@@ -8,7 +8,7 @@
 
 int main() {
 	chapter10Problems *p1 = new chapter10Problems;
-	p1->caseManipulator();
+	p1->wordSeparator();
 	system("pause");
 	return 0;
 }
@@ -352,10 +352,14 @@ void chapter10Problems::sumDigitsInString()
 		{
 			std::cout << "The input must only contain numbers. Try again: ";
 			std::cin.getline(input, size);
+			length = strlen(input);
+
+			//Reset counter to 0 to validate through each element
 			count = -1;
 		}
 		count++;
 	}
+
 
 	//Keep a running total and collect the sum of each individual number in string
 	int total = 0;
@@ -512,6 +516,34 @@ void chapter10Problems::reverse(char *input)
 	std::cout << std::endl << std::endl;
 }
 
+void chapter10Problems::wordSeparator()
+{
+	//This program will seperate words based on capitalization within a single string
+
+	const int size = 50;
+	char sentence[size];
+
+	//Gather input
+	std::cout << "Enter a sentence in which all of the words are sum together, but the first character of each word is uppercase: ";
+	std::cin.getline(sentence, size);
+
+	//Traverse through each element and seperate the words. Display them. Always capitalize first letter
+
+	std::cout << char(toupper(sentence[0]));
+
+	for (int i = 1; i < strlen(sentence); i++)
+	{
+		if (isupper(sentence[i]))
+		{
+			std::cout << " ";
+			std::cout << char(tolower(sentence[i]));
+		}
+		else
+			std::cout << sentence[i];
+	}
+
+	std::cout << std::endl;
+}
 
 
 chapter10Problems::chapter10Problems()
